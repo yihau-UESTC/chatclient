@@ -4,6 +4,7 @@ package com.uestc.yihau.client.codec;
 import com.uestc.yihau.client.constant.ConstantValue;
 import com.uestc.yihau.client.model.Response;
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 

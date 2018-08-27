@@ -4,7 +4,7 @@ import io.netty.channel.*;
 import io.netty.bootstrap.Bootstrap;
 
 import java.util.concurrent.TimeUnit;
-
+@ChannelHandler.Sharable
 public abstract class ConnectionWatchDog extends ChannelInboundHandlerAdapter implements Runnable, ChannelHandlerHolder {
     private final Bootstrap bootstrap;
     private final int port;

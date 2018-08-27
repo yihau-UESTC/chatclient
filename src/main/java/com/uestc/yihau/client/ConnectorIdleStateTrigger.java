@@ -2,11 +2,12 @@ package com.uestc.yihau.client;
 
 import com.uestc.yihau.client.model.Request;
 import com.uestc.yihau.client.module.ModuleId;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
-
+@ChannelHandler.Sharable
 public class ConnectorIdleStateTrigger extends ChannelInboundHandlerAdapter {
     private static final Request HEATBEAT = Request.valueOf(ModuleId.HEATBEAT, (short) -1, null);
 
