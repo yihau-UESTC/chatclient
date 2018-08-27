@@ -6,7 +6,6 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.uestc.yihau.client.ResultCodeTip;
 import com.uestc.yihau.client.model.ResultCode;
 import com.uestc.yihau.client.module.chat.ChatModule;
-import com.uestc.yihau.client.module.chat.response.MessageResponse;
 import org.springframework.stereotype.Component;
 
 @Component

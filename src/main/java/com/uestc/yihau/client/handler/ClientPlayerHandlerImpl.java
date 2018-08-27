@@ -6,7 +6,6 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.uestc.yihau.client.ResultCodeTip;
 import com.uestc.yihau.client.model.ResultCode;
 import com.uestc.yihau.client.module.player.PlayerModule;
-import com.uestc.yihau.client.module.player.response.PlayerResponse;
 import org.springframework.stereotype.Component;
 
 @Component

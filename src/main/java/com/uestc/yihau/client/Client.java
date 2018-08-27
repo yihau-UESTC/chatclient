@@ -1,6 +1,5 @@
 package com.uestc.yihau.client;
 
-
 import com.uestc.yihau.client.codec.RequestEncoder;
 import com.uestc.yihau.client.codec.ResponseDecoder;
 import com.uestc.yihau.client.model.Request;
@@ -15,7 +14,6 @@ import com.uestc.yihau.client.scanner.InvokerHolder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
@@ -23,7 +21,6 @@ import io.netty.handler.timeout.IdleStateHandler;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.net.InetSocketAddress;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -128,7 +125,14 @@ public class Client {
     private class ClientHandler extends ChannelInboundHandlerAdapter {
         @Override
         public void channelActive(ChannelHandlerContext ctx) throws Exception {
+            System.out.println("Channel 激活");
+            ctx.fireChannelActive();
+        }
 
+        @Override
+        public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+            System.out.println("Channel 失活");
+            ctx.fireChannelInactive();
         }
 
         @Override
